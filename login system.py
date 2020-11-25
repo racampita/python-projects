@@ -8,9 +8,9 @@ def logedin(un):
 		del users[un]
 		with open("users.json", 'w') as jsonFile:
 			json.dump(users, jsonFile)
-		input("Account deleted. Press Enter to continue...")
+		input("Account deleted. Press Enter to exit...")
 	elif delete == "N" or delete == "n":
-		input("Thanks for loggin in. Press Enter to continue...")
+		input("Thanks for loggin in. Press Enter to exit...")
 	else:
 		print("Invalid Input. Please try again.")
 		logedin(un)
@@ -25,7 +25,7 @@ def login():
 		userslogin = json.load(jsonFile)
 	if un in userslogin:
 		if pw == userslogin[un]:
-			print("Welcome")
+			print("Welcome, " + userslogin[un] + "!")
 			logedin(un)
 		else:
 			print("password is incorrect")
@@ -41,7 +41,9 @@ def signup():
 	with open("users.json", 'w') as jsonFile:
 		json.dump(users, jsonFile)
 	print("You are registered")
-	login()
+	print("Auto logging in...")
+	print("Welcome, " + users[un] + "!")
+	logedin(un)
 #login or sign up
 com = input("Login(1) or Signup(2): ")
 if com == "1":
@@ -50,4 +52,4 @@ elif com == "2":
 	signup()
 else:
 	print("Invalid input")
-	esc = input("Press Enter to continue... ")
+	esc = input("Press Enter to exit... ")
