@@ -2,9 +2,18 @@ import json
 #when logged in, you can delete your account
 def logedin(un):
 	delete = input("Do you want to delete your account? (Y/N)")
-	if delete == "Y":
-		
+	if delete == "Y" or delete == "y":
+		with open("users.json") as jsonFile:
+			users = json.load(jsonFile)
+		del users[un]
+		with open("users.json", 'w') as jsonFile:
+			json.dump(users, jsonFile)
 		input("Account deleted. Press Enter to continue...")
+	elif delete == "N" or delete == "n":
+		input("Thanks for loggin in. Press Enter to continue...")
+	else:
+		print("Invalid Input. Please try again.")
+		logedin(un)
 
 
 #login system
@@ -12,7 +21,8 @@ def login():
 	un = input("Enter Username: ")
 	pw = input("Enter Password: ")
 	#check if username is in database
-	
+	with open("users.json") as jsonFile:
+		userslogin = json.load(jsonFile)
 	if un in userslogin:
 		if pw == userslogin[un]:
 			print("Welcome")
@@ -25,11 +35,14 @@ def login():
 def signup():
 	un = input("Enter Username: ")
 	pw = input("Enter Password: ")
-
+	with open("users.json") as jsonFile:
+		users = json.load(jsonFile)
+	users[un] = pw
+	with open("users.json", 'w') as jsonFile:
+		json.dump(users, jsonFile)
 	print("You are registered")
 	login()
 #login or sign up
-print(open("users.json", "r"))
 com = input("Login(1) or Signup(2): ")
 if com == "1":
 	login()
