@@ -3,7 +3,7 @@ import logedinMod
 import loginMod
 import signupMod
 
-com = input("Login(1) or Signup(2): ")
+com = input("Login(1) or Signup(2)? ")
 if com == "1":
 	loginMod.login()
 elif com == "2":
