@@ -25,7 +25,7 @@ def login():
 		userslogin = json.load(jsonFile)
 	if un in userslogin:
 		if pw == userslogin[un]:
-			print("Welcome, " + userslogin[un] + "!")
+			print("Welcome, " + un + "!")
 			logedin(un)
 		else:
 			print("password is incorrect")
@@ -42,7 +42,7 @@ def signup():
 		json.dump(users, jsonFile)
 	print("You are registered")
 	print("Auto logging in...")
-	print("Welcome, " + users[un] + "!")
+	print("Welcome, " + un + "!")
 	logedin(un)
 #login or sign up
 com = input("Login(1) or Signup(2): ")
