@@ -1,7 +1,10 @@
 import logedinMod
 import json
+import os
+
 
 def signup():
+	os.system('cls')
 	un = input("Enter Username: ")
 	pw = input("Enter Password: ")
 	with open("users.json") as jsonFile:
@@ -15,5 +18,4 @@ def signup():
 			json.dump(users, jsonFile)
 		print("You are registered")
 		print("Auto logging in...")
-		print("Welcome, " + un + "!")
 		logedinMod.logedin(un)

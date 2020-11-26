@@ -1,10 +1,15 @@
 import json
+import os
+
 
 def logedin(un):
+	os.system('cls')
+	print("Welcome, " + un + "!")
+	#account deletion
 	delete = input("Do you want to delete your account? (Y/N)")
 	if delete == "Y" or delete == "y":
 		while True:
-			confirmation = input ("Enter your password: ")
+			confirmation = input("Enter your password: ")
 			with open("users.json") as jsonFile:
 				users = json.load(jsonFile)
 			#password authentication
