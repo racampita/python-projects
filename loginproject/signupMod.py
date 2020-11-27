@@ -10,7 +10,7 @@ def signup():
 	with open("users.json") as jsonFile:
 		users = json.load(jsonFile)
 	if un in users:
-		print("This username already exists. Please try a different one.")
+		input("This username already exists. Please try a different one.\nPress ENTER to continue")
 		signup()
 	else:
 		users[un] = pw
