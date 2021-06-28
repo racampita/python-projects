@@ -1,34 +1,14 @@
-num1 = int(input())
-operation = input()
-num2 = int(input())
-
-if operation == "+":
-    result = num1 + num2
-elif operation == "-":
-    result = num1 - num2
-elif operation == "*":
-    result = num1 * num2
-elif operation == "/":
-    result = num1 / num2
-else:
-    print("Invalid operation")
-
-while True:
-    operation = input()
-    print(result)
-    num1 = result
-    if operation == "=":
+real_number = 568
+tries = 0
+while tries < 3:
+    number = int(input("Guess: "))
+    if number > real_number:
+        print("Lower")
+    elif number < real_number:
+        print("Higher")
+    elif number == real_number:
+        print("You are correct!")
         break
-    num2 = int(input())
-    if operation == "+":
-        result = num1 + num2
-    elif operation == "-":
-        result = num1 - num2
-    elif operation == "*":
-        result = num1 * num2
-    elif operation == "/":
-        result = num1 / num2
-    else:
-        print("Invalid operation")
-
-
+    tries += 1
+else:
+    print("You failed...")
