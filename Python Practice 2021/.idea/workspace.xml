@@ -38,7 +38,7 @@
       <recent name="C:\Users\Renz Campita\Documents\DevProjects\python\python-projects\Python Practice 2021" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.car_game">
+  <component name="RunManager" selected="Python.app">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python Practice 2021" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -104,8 +104,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.car_game" />
         <item itemvalue="Python.app" />
+        <item itemvalue="Python.car_game" />
       </list>
     </recent_temporary>
   </component>
